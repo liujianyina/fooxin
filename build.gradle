@@ -1,29 +1,62 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.9.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
+apply plugin: 'idea'
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
-group = 'cn.fooxin'
-version = '0.0.1-SNAPSHOT'
+war {
+    baseName = 'web'
+    version = '1.0'
+}
+
+sourceCompatibility = 1.8
+// java编译的时候缺省状态下会因为中文字符而失败
+[compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+
+group = 'cn.fooxin.web'
+version = '1.0'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile('org.springframework.boot:spring-boot-starter-tomcat')
+
+    compile('org.springframework.boot:spring-boot-starter-freemarker')
+
+    compile('org.springframework.boot:spring-boot-starter-actuator:1.5.6.RELEASE')
+
+    compile("org.springframework.boot:spring-boot-starter-cache")
+
+    compile("joda-time:joda-time:2.9.7")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtime('mysql:mysql-connector-java')
+
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.5'
+
 }
