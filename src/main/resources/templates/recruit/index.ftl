@@ -16,133 +16,82 @@
             <p>Recruit</p>
         </div>
         <div class="right toppic-progress">
-            <span><a href="index.html" class="w-white">首页</a></span>
+            <span><a href="/index" class="w-white">首页</a></span>
             <i class=" am-icon-arrow-circle-right w-white"></i>
-            <span><a href="recruit.html" class="w-white">招贤纳士</a></span>
+            <span><a href="/recruit/index" class="w-white">招贤纳士</a></span>
         </div>
     </div>
 </div>
-
 <div>
-    <ul class="product-show-ul" id="test01">
-        <#--<li>
-            <div class="product-content">
-                <div class="left am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-left">
-                    <img class="product-img" src="/static/img/zhaoping2.png"/>
-                </div>
-                <div class="right am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-right">
-
-                    <div class="product-show-title">
-                        <span>软件测试人员</span>
+    <ul class=" product-show-ul">
+    <#assign num = 0.0>
+    <#list  recruits as r>
+        <#if num % 2 == 0>
+            <li>
+                <div class="product-content">
+                    <div class="left am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-left">
+                        <img class="product-img" src="${r.imgUrl}"/>
                     </div>
+                    <div class="right am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-right">
 
-                    <div class="product-show-content">
-                        <div class="product-add">
-                            <span>岗位描述：</span>
-                            <div>
-                                <p>1.熟悉软件系统开发的流程，了解软件系统开发的目标。</p>
-                                <p>2.能独立运用Java语言进行软件的开发。</p>
-                                <p>3.按时保质保量完成项目开发,运行测试并编写相关文档。</p>
-                                <p>4.思维敏捷,责任心强,能承受工作压力。</p>
+                        <div class="product-show-title">
+                            <span>${r.title}</span>
+                        </div>
+
+                        <div class="product-show-content">
+                            <div class="product-add">
+                                <span>岗位描述：</span>
+                                <div>
+                                ${r.description}
+                                </div>
+                            </div>
+                            <div class="product-add">
+                                <span>任职资格：</span>
+                                <div>
+                                ${r.qualifications}
+                                </div>
                             </div>
                         </div>
-                        <div class="product-add">
-                            <span>任职资格：</span>
-                            <div>
-                                <p>1、要求从软件研发工作2年以上工作经验,能独立上岗及管理团队；</p>
-                                <p>2、精通Java，Javascript等 web 编程语言；</p>
-                                <p>3、能熟练使用spring，hibernate等主流框架。</p>
-                                <p>4、能熟练使用jquery，以及基于Jquery的前台组件，熟悉Extjs 者优先；</p>
-                                <p>5、熟练掌握Oracle、SQLServer、MySQL等主流数据库，能独立完成数据库设计；</p>
-                                <p>6、事业心强，勤奋好学，有团队精神；</p>
-                            </div>
-
-                        </div>
                     </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-            </div>
-        </li>
-        <li class="gray-li">
-            <div class="product-content">
-                <div class="left am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-left">
-                    <div class="product-show-title">
-                        <span>JAVA软件开发工程师</span>
-                    </div>
+            </li>
+        <#else>
+            <li class="gray-li">
+                <div class="product-content">
+                    <div class="left am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-left">
+                        <div class="product-show-title">
+                            <span>${r.title}</span>
+                        </div>
 
-                    <div class="product-show-content">
-                        <div class="product-add">
-                            <span>岗位描述：</span>
-                            <div>
-                                <p>1.熟悉软件系统开发的流程，了解软件系统开发的目标。</p>
-                                <p>2.能独立运用Java语言进行软件的开发。</p>
-                                <p>3.按时保质保量完成项目开发,运行测试并编写相关文档。</p>
-                                <p>4.思维敏捷,责任心强,能承受工作压力。</p>
+                        <div class="product-show-content">
+                            <div class="product-add">
+                                <span>岗位描述：</span>
+                                <div>
+                                ${r.description}
+                                </div>
+                            </div>
+                            <div class="product-add">
+                                <span>任职资格：</span>
+                                <div>
+                                ${r.qualifications}
+                                </div>
                             </div>
                         </div>
-                        <div class="product-add">
-                            <span>任职资格：</span>
-                            <div>
-                                <p>1、要求从软件研发工作2年以上工作经验,能独立上岗及管理团队；</p>
-                                <p>2、精通Java，Javascript等 web 编程语言；</p>
-                                <p>3、能熟练使用spring，hibernate等主流框架。</p>
-                                <p>4、能熟练使用jquery，以及基于Jquery的前台组件，熟悉Extjs 者优先；</p>
-                                <p>5、熟练掌握Oracle、SQLServer、MySQL等主流数据库，能独立完成数据库设计；</p>
-                                <p>6、事业心强，勤奋好学，有团队精神；</p>
-                            </div>
-
-                        </div>
                     </div>
-                </div>
-                <div class="right am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-right">
-                    <img class="product-img" src="/static/img/zhaoping1.png"/>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </li>
-        <li>
-            <div class="product-content">
-                <div class="left am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-left">
-                    <img class="product-img" src="/static/img/zhaoping2.png"/>
-                </div>
-                <div class="right am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-right">
-
-                    <div class="product-show-title">
-                        <span>软件测试人员</span>
+                    <div class="right am-u-sm-12 am-u-md-6 am-u-lg-6 recruit-right">
+                        <img class="product-img" src="${r.imgUrl}"/>
                     </div>
-
-                    <div class="product-show-content">
-                        <div class="product-add">
-                            <span>岗位描述：</span>
-                            <div>
-                                <p>1.熟悉软件系统开发的流程，了解软件系统开发的目标。</p>
-                                <p>2.能独立运用Java语言进行软件的开发。</p>
-                                <p>3.按时保质保量完成项目开发,运行测试并编写相关文档。</p>
-                                <p>4.思维敏捷,责任心强,能承受工作压力。</p>
-                            </div>
-                        </div>
-                        <div class="product-add">
-                            <span>任职资格：</span>
-                            <div>
-                                <p>1、要求从软件研发工作2年以上工作经验,能独立上岗及管理团队；</p>
-                                <p>2、精通Java，Javascript等 web 编程语言；</p>
-                                <p>3、能熟练使用spring，hibernate等主流框架。</p>
-                                <p>4、能熟练使用jquery，以及基于Jquery的前台组件，熟悉Extjs 者优先；</p>
-                                <p>5、熟练掌握Oracle、SQLServer、MySQL等主流数据库，能独立完成数据库设计；</p>
-                                <p>6、事业心强，勤奋好学，有团队精神；</p>
-                            </div>
-
-                        </div>
-                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-            </div>
-        </li>
-        <div class="clear"></div>-->
+            </li>
+        </#if>
+        <#assign num = num + 1>
+    </#list>
     </ul>
 </div>
 
-<div class="gray-li">
+<div class=" gray-li">
     <div class="am-container-1">
         <div class="part-title part-title-mar">
             <i class="am-icon-users part-title-i"></i>

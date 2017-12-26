@@ -19,25 +19,25 @@
                         <a href="/index">首页</a>
                     </li>
                     <li>
-                        <a href="solutions.html">解决方案</a>
+                        <a href="/solutions/index">解决方案</a>
                     </li>
                     <li>
-                        <a href="product-show.html">产品展示 </a>
+                        <a href="/product/index">产品展示 </a>
                     </li>
                     <li>
-                        <a href="customer-case.html">客户案例</a>
+                        <a href="/customer_case/index">客户案例</a>
                     </li>
                     <li>
-                        <a href="service-center.html">服务中心 </a>
+                        <a href="/service_center/index">服务中心 </a>
                     </li>
                     <li>
                         <a href="/news/index">新闻动态 </a>
                     </li>
                     <li>
-                        <a href="about-us.html">关于我们</a>
+                        <a href="/about/index">关于我们</a>
                     </li>
                     <li>
-                        <a href="recruit.html">招贤纳士 </a>
+                        <a href="/recruit/index">招贤纳士 </a>
                     </li>
                 </ul>
             </div>

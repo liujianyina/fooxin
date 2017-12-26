@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by liujianyin on 2017/12/25.
  */
@@ -25,7 +27,7 @@ public class RecruitServiceImpl extends BaseServiceImpl<Recruit, RecruitReposito
     }
 
     @Override
-    public Page<Recruit> queryPage(int page, int size) {
-        return recruitRepository.findAll(new PageRequest(page - 1, size));
+    public List<Recruit> findAll() {
+        return recruitRepository.findAll();
     }
 }
