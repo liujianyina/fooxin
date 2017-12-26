@@ -14,4 +14,3 @@
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/scroll.js"></script>
 <script type="/static/text/javascript"></script>
-<script src="/static/js/common.js"></script>
