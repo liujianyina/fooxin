@@ -57,6 +57,5 @@ public interface ResourceService extends BaseService<Resource> {
      */
     List<Resource> findValidByType(Integer[] types);
 
-    Page<Resource> pageQuery(int page, int limit);
 
 }

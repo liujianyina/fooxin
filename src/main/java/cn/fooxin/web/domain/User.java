@@ -1,6 +1,5 @@
 package cn.fooxin.web.domain;
 
-
 import cn.fooxin.web.utils.Constant;
 
 import javax.persistence.*;
@@ -10,96 +9,56 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 用户
- * Created by liujianyin on 2017/11/17.
+ * Created by liujianyin on 2017/12/25.
  */
 
 @Entity
 @Table(name = Constant.TABLE_PREFIX + "user")
 public class User extends BaseDomain {
-    private static final long serialVersionUID = 5217837587969356444L;
+    private static final long serialVersionUID = -8398411846182073577L;
 
     /**
-     * 工号或者学号
+     * 登录名
      */
-    @NotNull(message = "number不能为空")
-    @Column(nullable = false, updatable = false, unique = true)
-    private String number;
+    @NotNull(message = "用户名不能为空")
+    @Column(length = 32, nullable = false)
+    private String username;
 
     /**
      * 密码
      */
     @NotNull(message = "密码不能为空")
-    @Column(nullable = false)
+    @Column(length = 32, nullable = false)
     private String password;
-
-    /**
-     * 真实姓名
-     */
-    @NotNull(message = "姓名不能为空")
-    @Column(nullable = false, updatable = false)
-    private String cname;
-
-    /**
-     * 头像地址
-     */
-    @Column
-    private String imgurl = "/static/img/user.png";
 
     /**
      * 性别
      */
-    @Column
+    @Column(length = 2)
     private String sex;
 
     /**
-     * 微信登陆taken
+     * 真实姓名
      */
-    @Column
-    private String wxTaken;
+    @Column(length = 12)
+    private String cname;
 
     /**
-     * 手机号码
+     * 电话号码
      */
-    @Column
+    @Column(length = 11)
     private String phoneNum;
-
-    /**
-     * 年级
-     */
-    @Column
-    private String gradle;
-
-    /**
-     * 专业
-     */
-    private String major;
-
-    /**
-     * 班级
-     */
-    private String clz;
-
-    /**
-     * 部门
-     */
-    private String department;
-
-    /**
-     * 职称
-     */
-    private String title;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = Constant.TABLE_PREFIX + "user_role", joinColumns = {@JoinColumn(name = "user_sid")}, inverseJoinColumns = {@JoinColumn(name = "role_sid")})
     private List<Role> roleList;
 
-    public String getNumber() {
-        return number;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -110,22 +69,6 @@ public class User extends BaseDomain {
         this.password = password;
     }
 
-    public String getCname() {
-        return cname;
-    }
-
-    public void setCname(String cname) {
-        this.cname = cname;
-    }
-
-    public String getImgurl() {
-        return imgurl;
-    }
-
-    public void setImgurl(String imgurl) {
-        this.imgurl = imgurl;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -134,12 +77,12 @@ public class User extends BaseDomain {
         this.sex = sex;
     }
 
-    public String getWxTaken() {
-        return wxTaken;
+    public String getCname() {
+        return cname;
     }
 
-    public void setWxTaken(String wxTaken) {
-        this.wxTaken = wxTaken;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public String getPhoneNum() {
@@ -150,46 +93,6 @@ public class User extends BaseDomain {
         this.phoneNum = phoneNum;
     }
 
-    public String getGradle() {
-        return gradle;
-    }
-
-    public void setGradle(String gradle) {
-        this.gradle = gradle;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public String getClz() {
-        return clz;
-    }
-
-    public void setClz(String clz) {
-        this.clz = clz;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public List<Role> getRoleList() {
         return roleList;
     }
@@ -197,7 +100,6 @@ public class User extends BaseDomain {
     public void setRoleList(List<Role> roleList) {
         this.roleList = roleList;
     }
-
 
     /**
      * 取得用户所有可访问url

@@ -23,9 +23,6 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, ResourceRepos
     private ResourceRepository resourceRepository;
 
     @Autowired
-    private ResourceService resourceService;
-
-    @Autowired
     @Override
     public void setRepository(ResourceRepository repository) {
         this.resourceRepository = repository;
@@ -95,8 +92,4 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, ResourceRepos
         return resourceRepository.findValidByType(types);
     }
 
-    @Override
-    public Page<Resource> pageQuery(int page, int limit) {
-        return resourceRepository.findAll(new PageRequest(page - 1, limit));
-    }
 }

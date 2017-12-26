@@ -7,7 +7,7 @@ package cn.fooxin.web.utils;
 
 public class Constant {
 
-    public final static String TABLE_PREFIX = "jxda_";
+    public final static String TABLE_PREFIX = "fooxin_";
 
     /**
      * session对象key
@@ -16,7 +16,7 @@ public class Constant {
         /**
          * 当前登录用户
          */
-        public static final String CURRENT_USER = "cn.yznu.jxda.session.user";
+        public static final String CURRENT_USER = "cn.fooxin.web.session.user";
 
         /**
          * 当前登录用户菜单

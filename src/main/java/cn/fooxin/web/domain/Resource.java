@@ -18,7 +18,6 @@ import java.util.List;
 public class Resource extends BaseDomain implements Comparable<Resource> {
     private static final long serialVersionUID = 3318095271168375713L;
 
-
     /**
      * 菜单名称
      */
@@ -60,7 +59,6 @@ public class Resource extends BaseDomain implements Comparable<Resource> {
      * 是否显示
      */
     private int display = 1;
-
 
     @Transient
     private List<Resource> children = new ArrayList<>();
